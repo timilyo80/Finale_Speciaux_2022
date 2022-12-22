@@ -12,17 +12,25 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp1.ViewModel;
 
 namespace WpfApp1
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
+        MorceauServices morceauServices;
+
         public MainWindow()
         {
             InitializeComponent();
+            RefreshGrid();
+        }
+
+        private void RefreshGrid()
+        {
+            morceauServices = new MorceauServices();
+            MorceauxList.ItemsSource = null;
+            MorceauxList.ItemsSource = morceauServices.MorceauxList;
         }
     }
 }

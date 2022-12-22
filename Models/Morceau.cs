@@ -14,7 +14,7 @@ namespace WpfApp1.Models
         public string Duree { get; set; }
         public string Genre { get; set; }
         public string Annee { get; set; }
+        public string Apprecie { get; set; }
         public string Chemin { get; set; }
-
     }
 }

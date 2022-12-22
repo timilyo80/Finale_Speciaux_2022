@@ -43,8 +43,8 @@
                     </Grid>
 
                     <ListBox x:Name="MorceauxList" VerticalAlignment="Top" HorizontalAlignment="Left">
-                        <!--ListBox.ItemTemplate-->
-                            <!--DataTemplate-->
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
                                 <Grid Width="800">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="25"/>
@@ -58,16 +58,16 @@
                                         <ColumnDefinition Width="55"/>
                                     </Grid.ColumnDefinitions>
 
-                                    <TextBlock Grid.Column="0" Text="Titre"/>
-                                    <TextBlock Grid.Column="1" Text="Artiste"/>
-                                    <TextBlock Grid.Column="2" Text="Duree"/>
-                                    <TextBlock Grid.Column="3" Text="Genre"/>
-                                    <TextBlock Grid.Column="4" Text="Annee"/>
-                                    <TextBlock Grid.Column="5" Text="Apprecie"/>
+                                    <TextBlock Grid.Column="0" Text="{Binding Titre}"/>
+                                    <TextBlock Grid.Column="1" Text="{Binding Artiste}"/>
+                                    <TextBlock Grid.Column="2" Text="{Binding Duree}"/>
+                                    <TextBlock Grid.Column="3" Text="{Binding Genre}"/>
+                                    <TextBlock Grid.Column="4" Text="{Binding Annee}"/>
+                                    <TextBlock Grid.Column="5" Text="{Binding Apprecie}"/>
 
                                 </Grid>
-                            <!--/-->
-                        <!--/-->
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
                     </ListBox>
                 </StackPanel>
             </ScrollViewer>
