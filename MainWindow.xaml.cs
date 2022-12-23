@@ -123,6 +123,25 @@ namespace WpfApp1
             vm.timer.Start();
         }
 
+        private void BtnPause_Click(object Sender, RoutedEventArgs e)
+        {
+            vm.timer.Stop();
+        }
+
+        private void BtnResume_Click(object Sender, RoutedEventArgs e)
+        {
+            vm.timer.Start();
+        }
+
+        private void BtnStop_Click(object Sender, RoutedEventArgs e)
+        {
+            vm.timer.Stop();
+            vm.CurrentProgress = 0;
+            vm.MaxProgress = 0;
+        }
+
+        //-------------------------------------------------------------------------------------------------------------
+
         private void RefreshGrid()
         {
             morceauServices = new MorceauServices();

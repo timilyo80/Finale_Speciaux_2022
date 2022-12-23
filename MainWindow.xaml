@@ -146,7 +146,17 @@
         </Grid>
 
         <Grid Grid.Row="4" Grid.Column="0">
-            <ProgressBar x:Name="bar" Height="20" Width="400" Value="{Binding CurrentProgress, Mode=OneWay}" Maximum="{Binding MaxProgress}"/>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="600"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Content="Pause" x:Name="BtnPause" Click="BtnPause_Click" Grid.Column="0" Width="80" Height="50" HorizontalAlignment="Left"/>
+            <Button Content="Resume" x:Name="BtnResume" Click="BtnResume_Click" Grid.Column="1" Width="80" Height="50" HorizontalAlignment="Left"/>
+            <Button Content="Stop" x:Name="BtnStop" Click="BtnStop_Click" Grid.Column="2" Width="80" Height="50" HorizontalAlignment="Left"/>
+            <ProgressBar Grid.Column="3" HorizontalAlignment="Left" x:Name="bar" Height="20" Width="400" Value="{Binding CurrentProgress, Mode=OneWay}" Maximum="{Binding MaxProgress}"/>
         </Grid>
     </Grid>
 </Window>
