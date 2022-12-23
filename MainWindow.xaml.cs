@@ -14,17 +14,43 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfApp1.ViewModel;
 using WpfApp1.Models;
-using System.Collections;
+using System.Windows.Threading;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace WpfApp1
 {
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, INotifyPropertyChanged
     {
         MorceauServices morceauServices;
+        public DispatcherTimer timer;
+        public int MaxProgress => 60;
+        private int currentProgress;
+        MainViewModel vm = new MainViewModel();
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public int CurrentProgress
+        {
+            get { return currentProgress; }
+            private set
+            {
+                if (currentProgress != value)
+                {
+                    currentProgress = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
 
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = vm;
             RefreshGrid();
         }
 
@@ -86,13 +112,15 @@ namespace WpfApp1
             morceauServices.UpdateJSON(selected);
         }
 
-        private void BtnPlay_Click(object sender, RoutedEventArgs e)
+        private void BtnPlay_Click(object Sender, RoutedEventArgs e)
         {
-            Button b = (Button)sender;
+            Button b = (Button)Sender;
 
             Morceau selected = morceauServices.SelectResearch("id", b.Tag.ToString())[0];
 
-            MessageBox.Show(selected.Titre);
+            vm.CurrentProgress = 0;
+            vm.MaxProgress = int.Parse(selected.Duree);
+            vm.timer.Start();
         }
 
         private void RefreshGrid()

@@ -16,3 +16,4 @@ D:\Users\emg08\Desktop\WPF_Final\WpfApp1\WpfApp1\obj\Debug\WpfApp1.pdb
 D:\Users\emg08\Desktop\WPF_Final\WpfApp1\WpfApp1\bin\Debug\Newtonsoft.Json.dll
 D:\Users\emg08\Desktop\WPF_Final\WpfApp1\WpfApp1\bin\Debug\Newtonsoft.Json.xml
 D:\Users\emg08\Desktop\WPF_Final\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.CopyComplete
+D:\Users\emg08\Desktop\WPF_Final\WpfApp1\WpfApp1\obj\Debug\GeneratedInternalTypeHelper.g.cs

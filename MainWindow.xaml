@@ -4,14 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
+        xmlns:vm="clr-namespace:WpfApp1.ViewModel"
         mc:Ignorable="d"
         Title="Morceaux" Height="800" Width="1336">
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="45"/>
             <RowDefinition Height="11"/>
             <RowDefinition Height="530"/>
-            <RowDefinition Height="90"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="900"/>
@@ -140,6 +143,10 @@
             <Button Content="Research with Année" x:Name="BtnSearchAnnee" Click="BtnSearchAnnee_Click" Grid.Column="0" Grid.Row="14" Width="130" HorizontalAlignment="Left"/>
             <Button Content="Reset" x:Name="BtnReset" Click="BtnReset_Click" Grid.Column="1" Grid.Row="14" Width="130" HorizontalAlignment="Left"/>
 
+        </Grid>
+
+        <Grid Grid.Row="4" Grid.Column="0">
+            <ProgressBar x:Name="bar" Height="20" Width="400" Value="{Binding CurrentProgress, Mode=OneWay}" Maximum="{Binding MaxProgress}"/>
         </Grid>
     </Grid>
 </Window>
