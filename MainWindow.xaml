@@ -19,6 +19,23 @@
             <ColumnDefinition Width="400"/>
         </Grid.ColumnDefinitions>
 
+        <Grid Grid.Row="0" Grid.Column="0" Width="900">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="150"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Content="Create New" x:Name="BtnNew" Click="BtnNew_Click" Grid.Column="0" Width="130" HorizontalAlignment="Left"/>
+
+            <Button Content="Update" x:Name="BtnEdit" Click="BtnEdit_Click" Grid.Column="1" Width="130" HorizontalAlignment="Left"/>
+            
+            <Button Content="Delete" x:Name="BtnDelete" Click="BtnDelete_Click" Grid.Column="2" Width="130" HorizontalAlignment="Left"/>
+        </Grid>
+
         <Grid Grid.Row="2" Height="529" Width="900">
 
             <ScrollViewer x:Name="MorceauxView" Margin="0,0,0,0" VerticalScrollBarVisibility="Auto">
@@ -42,7 +59,7 @@
                         <TextBlock Grid.Column="5" Text="Apprecie"/>
                     </Grid>
 
-                    <ListBox x:Name="MorceauxList" VerticalAlignment="Top" HorizontalAlignment="Left">
+                    <ListBox x:Name="MorceauxListBox" VerticalAlignment="Top" HorizontalAlignment="Left">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Grid Width="800">
@@ -71,6 +88,25 @@
                     </ListBox>
                 </StackPanel>
             </ScrollViewer>
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="2" Height="529" Width="400">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="10"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="250"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Titre:"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Artiste"/>
+
+            <TextBox Grid.Row="0" Grid.Column="1" x:Name="TbTitre"/>
+            <TextBox Grid.Row="2" Grid.Column="1" x:Name="TbArtiste"/>
         </Grid>
     </Grid>
 </Window>

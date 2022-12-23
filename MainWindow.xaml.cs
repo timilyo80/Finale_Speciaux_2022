@@ -29,8 +29,23 @@ namespace WpfApp1
         private void RefreshGrid()
         {
             morceauServices = new MorceauServices();
-            MorceauxList.ItemsSource = null;
-            MorceauxList.ItemsSource = morceauServices.MorceauxList;
+            MorceauxListBox.ItemsSource = null;
+            MorceauxListBox.ItemsSource = morceauServices.MorceauxList;
+        }
+
+        private void BtnNew_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnEdit_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnDelete_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
