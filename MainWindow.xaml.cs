@@ -33,6 +33,7 @@ namespace WpfApp1
             if (Verification())
             {
                 Morceau obj = GetData();
+                obj.Id = CreateId();
                 morceauServices.InsertJSON(obj);
                 RefreshGrid();
             }
@@ -40,18 +41,31 @@ namespace WpfApp1
 
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
-            if (Verification())
-            {
+            int select = getSelect();
 
-            }
+            if (select >= 0 && select < MorceauxListBox.Items.Count)
+            {
+                if (Verification())
+                {
+                    Morceau obj = GetData();
+                    obj.Id = getId(select);
+                    morceauServices.UpdateJSON(obj);
+                    RefreshGrid();
+                }
+            } else MessageBox.Show("Invalid Select");
         }
 
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
         {
-            if (Verification())
-            {
+            int select = getSelect();
 
-            }
+            if (select >= 0 && select < MorceauxListBox.Items.Count)
+            {
+                Morceau obj = new Morceau();
+                obj.Id = getId(select);
+                morceauServices.DeleteJSON(obj);
+                RefreshGrid();
+            } else MessageBox.Show("Invalid Select");
         }
 
         private void RefreshGrid()
@@ -80,7 +94,6 @@ namespace WpfApp1
         private Morceau GetData()
         {
             var obj = new Morceau();
-            obj.Id = CreateId();
             obj.Titre = TbTitre.Text.Trim();
             obj.Artiste = TbArtiste.Text.Trim();
             obj.Duree = "1";
@@ -102,6 +115,21 @@ namespace WpfApp1
             }
 
             return result;
+        }
+
+        private int getId(int select)
+        {
+            IEnumerable<Morceau> items = MorceauxListBox.Items.OfType<Morceau>();
+            Morceau[] results = items.ToArray();
+            return results[select].Id;
+        }
+
+        private int getSelect()
+        {
+            int select;
+            try { select = int.Parse(TbSelect.Text.Trim()); }
+            catch { select = -1; }
+            return select;
         }
     }
 }
