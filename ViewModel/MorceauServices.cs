@@ -13,7 +13,7 @@ namespace WpfApp1.ViewModel
     public class MorceauServices
     {
         public List<Morceau> MorceauxList = null;
-        private string filename = @"D:\Users\emg08\Desktop\Morceaux.json";
+        private string filename = @"D:\Users\emg08\Desktop\WPF_Final\WpfApp1\WpfApp1\JSON\Morceaux.json";
 
         public MorceauServices()
         {

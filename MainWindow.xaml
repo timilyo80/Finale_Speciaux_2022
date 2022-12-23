@@ -24,9 +24,9 @@
                 <ColumnDefinition Width="150"/>
                 <ColumnDefinition Width="150"/>
                 <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="100"/>
                 <ColumnDefinition Width="150"/>
-                <ColumnDefinition Width="150"/>
-                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="200"/>
             </Grid.ColumnDefinitions>
 
             <Button Content="Create New" x:Name="BtnNew" Click="BtnNew_Click" Grid.Column="0" Width="130" HorizontalAlignment="Left"/>
@@ -35,7 +35,9 @@
             
             <Button Content="Delete" x:Name="BtnDelete" Click="BtnDelete_Click" Grid.Column="2" Width="130" HorizontalAlignment="Left"/>
 
-            <TextBox Grid.Column="3" x:Name="TbSelect"/>
+            <TextBlock Grid.Column="3" Text="Select Row:" Height="25"/>
+
+            <TextBox Grid.Column="4" x:Name="TbSelect" Height="25"/>
 
         </Grid>
 
@@ -99,6 +101,12 @@
                 <RowDefinition Height="10"/>
                 <RowDefinition Height="25"/>
                 <RowDefinition Height="10"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="10"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="150"/>
@@ -107,9 +115,15 @@
 
             <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Titre:"/>
             <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Artiste"/>
+            <TextBlock Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Durée:"/>
+            <TextBlock Grid.Row="6" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Genre"/>
+            <TextBlock Grid.Row="8" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Année"/>
 
             <TextBox Grid.Row="0" Grid.Column="1" x:Name="TbTitre"/>
             <TextBox Grid.Row="2" Grid.Column="1" x:Name="TbArtiste"/>
+            <TextBox Grid.Row="4" Grid.Column="1" x:Name="TbDuree"/>
+            <TextBox Grid.Row="6" Grid.Column="1" x:Name="TbGenre"/>
+            <TextBox Grid.Row="8" Grid.Column="1" x:Name="TbAnnee"/>
         </Grid>
     </Grid>
 </Window>

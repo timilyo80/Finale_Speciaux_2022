@@ -87,6 +87,21 @@ namespace WpfApp1
                 MessageBox.Show("Artiste Missing");
                 return false;
             }
+            if (TbDuree.Text.Length == 0)
+            {
+                MessageBox.Show("Durée Missing");
+                return false;
+            }
+            if (TbGenre.Text.Length == 0)
+            {
+                MessageBox.Show("Genre Missing");
+                return false;
+            }
+            if (TbAnnee.Text.Length == 0)
+            {
+                MessageBox.Show("Année Missing");
+                return false;
+            }
 
             return true;
         }
@@ -96,9 +111,9 @@ namespace WpfApp1
             var obj = new Morceau();
             obj.Titre = TbTitre.Text.Trim();
             obj.Artiste = TbArtiste.Text.Trim();
-            obj.Duree = "1";
-            obj.Genre = "dunno";
-            obj.Annee = "2000";
+            obj.Duree = TbDuree.Text.Trim();
+            obj.Genre = TbGenre.Text.Trim();
+            obj.Annee = TbAnnee.Text.Trim();
 
             return (obj);
         }
@@ -113,6 +128,8 @@ namespace WpfApp1
             {
                 result += itemsEnum.Current.Id;
             }
+
+            if (result == 0) result = 1;
 
             return result;
         }
