@@ -77,16 +77,22 @@ namespace WpfApp1
         private void BtnSearchAnnee_Click(object sender, RoutedEventArgs e) { RefreshGridResearch("annee", TbAnnee.Text.Trim()); }
         private void BtnReset_Click(object sender, RoutedEventArgs e) { RefreshGrid(); }
 
+        private void Check_Click(object sender, RoutedEventArgs e)
+        {
+            CheckBox c = (CheckBox)sender;
+
+            Morceau selected = morceauServices.SelectResearch("id", c.Tag.ToString())[0];
+            selected.Apprecie = c.IsChecked ?? false;
+            morceauServices.UpdateJSON(selected);
+        }
+
         private void BtnPlay_Click(object sender, RoutedEventArgs e)
         {
             Button b = (Button)sender;
 
-            if (b.CommandParameter != null)
-            {
-                Morceau selected = morceauServices.SelectResearch("id", b.Tag.ToString())[0];
+            Morceau selected = morceauServices.SelectResearch("id", b.Tag.ToString())[0];
 
-                MessageBox.Show(selected.Titre);
-            }
+            MessageBox.Show(selected.Titre);
         }
 
         private void RefreshGrid()

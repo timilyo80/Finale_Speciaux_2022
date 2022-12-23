@@ -90,8 +90,8 @@ namespace WpfApp1.ViewModel
                 test.Duree = morceau.Duree;
                 test.Genre = morceau.Genre;
                 test.Annee = morceau.Annee;
-                test.Apprecie = test.Apprecie;
-                test.Chemin = test.Chemin;
+                test.Apprecie = morceau.Apprecie;
+                test.Chemin = morceau.Chemin;
 
                 bool saved = SaveJSON();
                 if (!saved)

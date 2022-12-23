@@ -86,8 +86,8 @@
                                     <TextBlock Grid.Column="2" Text="{Binding Duree}"/>
                                     <TextBlock Grid.Column="3" Text="{Binding Genre}"/>
                                     <TextBlock Grid.Column="4" Text="{Binding Annee}"/>
-                                    <TextBlock Grid.Column="5" Text="{Binding Apprecie}"/>
-                                    <Button Grid.Column="6" Content="Play" x:Name="BtnPlay" Click="BtnPlay_Click" CommandParameter="{Binding Id}" Tag="{Binding Id}"/>
+                                    <CheckBox Grid.Column="5" Checked="Check_Click" Unchecked="Check_Click" IsChecked="{Binding Apprecie}" Tag="{Binding Id}"/>
+                                    <Button Grid.Column="6" Content="Play" x:Name="BtnPlay" Click="BtnPlay_Click" Tag="{Binding Id}"/>
 
                                 </Grid>
                             </DataTemplate>
