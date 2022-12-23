@@ -118,6 +118,7 @@
                 <RowDefinition Height="10"/>
                 <RowDefinition Height="35"/>
                 <RowDefinition Height="10"/>
+                <RowDefinition Height="35"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="150"/>
@@ -141,7 +142,8 @@
             <Button Content="Research with Durée" x:Name="BtnSearchDuree" Click="BtnSearchDuree_Click" Grid.Column="0" Grid.Row="12" Width="130" HorizontalAlignment="Left"/>
             <Button Content="Research with Genre" x:Name="BtnSearchGenre" Click="BtnSearchGenre_Click" Grid.Column="1" Grid.Row="12" Width="130" HorizontalAlignment="Left"/>
             <Button Content="Research with Année" x:Name="BtnSearchAnnee" Click="BtnSearchAnnee_Click" Grid.Column="0" Grid.Row="14" Width="130" HorizontalAlignment="Left"/>
-            <Button Content="Reset" x:Name="BtnReset" Click="BtnReset_Click" Grid.Column="1" Grid.Row="14" Width="130" HorizontalAlignment="Left"/>
+            <Button Content="Research with Apprecié" x:Name="BtnSearchApprecie" Click="BtnSearchApprecie_Click" Grid.Column="1" Grid.Row="14" Width="130" HorizontalAlignment="Left"/>
+            <Button Content="Reset" x:Name="BtnReset" Click="BtnReset_Click" Grid.Column="0" Grid.Row="16" Width="130" HorizontalAlignment="Left"/>
 
         </Grid>
 
@@ -150,13 +152,15 @@
                 <ColumnDefinition Width="100"/>
                 <ColumnDefinition Width="100"/>
                 <ColumnDefinition Width="100"/>
-                <ColumnDefinition Width="600"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="500"/>
             </Grid.ColumnDefinitions>
 
             <Button Content="Pause" x:Name="BtnPause" Click="BtnPause_Click" Grid.Column="0" Width="80" Height="50" HorizontalAlignment="Left"/>
             <Button Content="Resume" x:Name="BtnResume" Click="BtnResume_Click" Grid.Column="1" Width="80" Height="50" HorizontalAlignment="Left"/>
             <Button Content="Stop" x:Name="BtnStop" Click="BtnStop_Click" Grid.Column="2" Width="80" Height="50" HorizontalAlignment="Left"/>
-            <ProgressBar Grid.Column="3" HorizontalAlignment="Left" x:Name="bar" Height="20" Width="400" Value="{Binding CurrentProgress, Mode=OneWay}" Maximum="{Binding MaxProgress}"/>
+            <Button Content="Replay" x:Name="BtnReplay" Click="BtnReplay_Click" Grid.Column="3" Width="80" Height="50" HorizontalAlignment="Left"/>
+            <ProgressBar Grid.Column="4" HorizontalAlignment="Left" x:Name="bar" Height="20" Width="400" Value="{Binding CurrentProgress, Mode=OneWay}" Maximum="{Binding MaxProgress}"/>
         </Grid>
     </Grid>
 </Window>

@@ -95,12 +95,13 @@ namespace WpfApp1
                 RefreshGrid();
             } else MessageBox.Show("Invalid Select");
         }
-
+        
         private void BtnSearchTitre_Click(object sender, RoutedEventArgs e) { RefreshGridResearch("titre", TbTitre.Text.Trim()); }
         private void BtnSearchArtiste_Click(object sender, RoutedEventArgs e) { RefreshGridResearch("artiste", TbArtiste.Text.Trim()); }
         private void BtnSearchDuree_Click(object sender, RoutedEventArgs e) { RefreshGridResearch("duree", TbDuree.Text.Trim()); }
         private void BtnSearchGenre_Click(object sender, RoutedEventArgs e) { RefreshGridResearch("genre", TbGenre.Text.Trim()); }
         private void BtnSearchAnnee_Click(object sender, RoutedEventArgs e) { RefreshGridResearch("annee", TbAnnee.Text.Trim()); }
+        private void BtnSearchApprecie_Click(object sender, RoutedEventArgs e) { RefreshGridResearch("apprecie", "true"); }
         private void BtnReset_Click(object sender, RoutedEventArgs e) { RefreshGrid(); }
 
         private void Check_Click(object sender, RoutedEventArgs e)
@@ -138,6 +139,12 @@ namespace WpfApp1
             vm.timer.Stop();
             vm.CurrentProgress = 0;
             vm.MaxProgress = 0;
+        }
+
+        private void BtnReplay_Click(object Sender, RoutedEventArgs e)
+        {
+            vm.timer.Start();
+            vm.CurrentProgress = 0;
         }
 
         //-------------------------------------------------------------------------------------------------------------

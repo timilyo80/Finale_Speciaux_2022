@@ -159,6 +159,9 @@ namespace WpfApp1.ViewModel
                     case "annee":
                         if (MorceauxList[i].Annee == input) NewList.Add(MorceauxList[i]);
                         break;
+                    case "apprecie":
+                        if (MorceauxList[i].Apprecie == true) NewList.Add(MorceauxList[i]);
+                        break;
                     default:
                         MessageBox.Show("type not registered correctly");
                         break;
