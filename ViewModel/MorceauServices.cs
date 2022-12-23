@@ -141,6 +141,9 @@ namespace WpfApp1.ViewModel
             {
                 switch (type)
                 {
+                    case "id":
+                        if (MorceauxList[i].Id.ToString() == input) NewList.Add(MorceauxList[i]);
+                        break;
                     case "titre":
                         if (MorceauxList[i].Titre == input) NewList.Add(MorceauxList[i]);
                         break;

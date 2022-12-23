@@ -34,6 +34,7 @@ namespace WpfApp1
             {
                 Morceau obj = GetData();
                 obj.Id = CreateId();
+                obj.Apprecie = false;
                 morceauServices.InsertJSON(obj);
                 RefreshGrid();
             }
@@ -49,6 +50,7 @@ namespace WpfApp1
                 {
                     Morceau obj = GetData();
                     obj.Id = getId(select);
+                    obj.Apprecie = getAprecie(select);
                     morceauServices.UpdateJSON(obj);
                     RefreshGrid();
                 }
@@ -74,6 +76,18 @@ namespace WpfApp1
         private void BtnSearchGenre_Click(object sender, RoutedEventArgs e) { RefreshGridResearch("genre", TbGenre.Text.Trim()); }
         private void BtnSearchAnnee_Click(object sender, RoutedEventArgs e) { RefreshGridResearch("annee", TbAnnee.Text.Trim()); }
         private void BtnReset_Click(object sender, RoutedEventArgs e) { RefreshGrid(); }
+
+        private void BtnPlay_Click(object sender, RoutedEventArgs e)
+        {
+            Button b = (Button)sender;
+
+            if (b.CommandParameter != null)
+            {
+                Morceau selected = morceauServices.SelectResearch("id", b.Tag.ToString())[0];
+
+                MessageBox.Show(selected.Titre);
+            }
+        }
 
         private void RefreshGrid()
         {
@@ -140,13 +154,11 @@ namespace WpfApp1
 
             while (itemsEnum.MoveNext())
             {
-                result += itemsEnum.Current.Id;
+                if (result < itemsEnum.Current.Id)
+                    result = itemsEnum.Current.Id;
             }
 
-            if (result == 0) result = 1;
-            if (result == 1) result = 2;
-
-            return result;
+            return result + 1;
         }
 
         private int getId(int select)
@@ -154,6 +166,13 @@ namespace WpfApp1
             IEnumerable<Morceau> items = MorceauxListBox.Items.OfType<Morceau>();
             Morceau[] results = items.ToArray();
             return results[select].Id;
+        }
+
+        private bool getAprecie(int select)
+        {
+            IEnumerable<Morceau> items = MorceauxListBox.Items.OfType<Morceau>();
+            Morceau[] results = items.ToArray();
+            return results[select].Apprecie;
         }
 
         private int getSelect()
