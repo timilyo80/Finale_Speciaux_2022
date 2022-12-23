@@ -180,6 +180,8 @@ namespace WpfApp1
                 MessageBox.Show("Durée Missing");
                 return false;
             }
+            try { int i = int.Parse(TbDuree.Text); }
+            catch { MessageBox.Show("Durée not a number"); return false; }
             if (TbGenre.Text.Length == 0)
             {
                 MessageBox.Show("Genre Missing");
