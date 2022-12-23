@@ -68,11 +68,25 @@ namespace WpfApp1
             } else MessageBox.Show("Invalid Select");
         }
 
+        private void BtnSearchTitre_Click(object sender, RoutedEventArgs e) { RefreshGridResearch("titre", TbTitre.Text.Trim()); }
+        private void BtnSearchArtiste_Click(object sender, RoutedEventArgs e) { RefreshGridResearch("artiste", TbArtiste.Text.Trim()); }
+        private void BtnSearchDuree_Click(object sender, RoutedEventArgs e) { RefreshGridResearch("duree", TbDuree.Text.Trim()); }
+        private void BtnSearchGenre_Click(object sender, RoutedEventArgs e) { RefreshGridResearch("genre", TbGenre.Text.Trim()); }
+        private void BtnSearchAnnee_Click(object sender, RoutedEventArgs e) { RefreshGridResearch("annee", TbAnnee.Text.Trim()); }
+        private void BtnReset_Click(object sender, RoutedEventArgs e) { RefreshGrid(); }
+
         private void RefreshGrid()
         {
             morceauServices = new MorceauServices();
             MorceauxListBox.ItemsSource = null;
             MorceauxListBox.ItemsSource = morceauServices.MorceauxList;
+        }
+
+        private void RefreshGridResearch(string type, string input)
+        {
+            morceauServices = new MorceauServices();
+            MorceauxListBox.ItemsSource = null;
+            MorceauxListBox.ItemsSource = morceauServices.SelectResearch(type, input);
         }
 
         private bool Verification()
@@ -130,6 +144,7 @@ namespace WpfApp1
             }
 
             if (result == 0) result = 1;
+            if (result == 1) result = 2;
 
             return result;
         }

@@ -107,6 +107,12 @@
                 <RowDefinition Height="10"/>
                 <RowDefinition Height="25"/>
                 <RowDefinition Height="10"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="10"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="150"/>
@@ -124,6 +130,14 @@
             <TextBox Grid.Row="4" Grid.Column="1" x:Name="TbDuree"/>
             <TextBox Grid.Row="6" Grid.Column="1" x:Name="TbGenre"/>
             <TextBox Grid.Row="8" Grid.Column="1" x:Name="TbAnnee"/>
+
+            <Button Content="Research with Titre" x:Name="BtnSearchTitre" Click="BtnSearchTitre_Click" Grid.Column="0" Grid.Row="10" Width="130" HorizontalAlignment="Left"/>
+            <Button Content="Research with Artiste" x:Name="BtnSearchArtiste" Click="BtnSearchArtiste_Click" Grid.Column="1" Grid.Row="10" Width="130" HorizontalAlignment="Left"/>
+            <Button Content="Research with Durée" x:Name="BtnSearchDuree" Click="BtnSearchDuree_Click" Grid.Column="0" Grid.Row="12" Width="130" HorizontalAlignment="Left"/>
+            <Button Content="Research with Genre" x:Name="BtnSearchGenre" Click="BtnSearchGenre_Click" Grid.Column="1" Grid.Row="12" Width="130" HorizontalAlignment="Left"/>
+            <Button Content="Research with Année" x:Name="BtnSearchAnnee" Click="BtnSearchAnnee_Click" Grid.Column="0" Grid.Row="14" Width="130" HorizontalAlignment="Left"/>
+            <Button Content="Reset" x:Name="BtnReset" Click="BtnReset_Click" Grid.Column="1" Grid.Row="14" Width="130" HorizontalAlignment="Left"/>
+
         </Grid>
     </Grid>
 </Window>

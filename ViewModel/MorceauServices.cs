@@ -129,5 +129,40 @@ namespace WpfApp1.ViewModel
 
             return false;
         }
+
+        public List<Morceau> SelectResearch(string type, string input)
+        {
+            List<Morceau> NewList = new List<Morceau>();
+            GetJSON();
+            if (MorceauxList == null)
+                MorceauxList = new List<Morceau>();
+
+            for (int i = 0; i < MorceauxList.Count; i++)
+            {
+                switch (type)
+                {
+                    case "titre":
+                        if (MorceauxList[i].Titre == input) NewList.Add(MorceauxList[i]);
+                        break;
+                    case "artiste":
+                        if (MorceauxList[i].Artiste == input) NewList.Add(MorceauxList[i]);
+                        break;
+                    case "duree":
+                        if (MorceauxList[i].Duree == input) NewList.Add(MorceauxList[i]);
+                        break;
+                    case "genre":
+                        if (MorceauxList[i].Genre == input) NewList.Add(MorceauxList[i]);
+                        break;
+                    case "annee":
+                        if (MorceauxList[i].Annee == input) NewList.Add(MorceauxList[i]);
+                        break;
+                    default:
+                        MessageBox.Show("type not registered correctly");
+                        break;
+                }
+            }
+
+            return NewList;
+        }
     }
 }

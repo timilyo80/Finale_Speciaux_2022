@@ -1,1 +1,1 @@
-[{"Id":0,"Titre":"a","Artiste":"a","Duree":"a","Genre":"a","Annee":"a","Apprecie":null,"Chemin":null},{"Id":1,"Titre":"b","Artiste":"b","Duree":"c","Genre":"b","Annee":"a","Apprecie":null,"Chemin":null}]
+[{"Id":0,"Titre":"a","Artiste":"a","Duree":"a","Genre":"a","Annee":"a","Apprecie":null,"Chemin":null},{"Id":1,"Titre":"b","Artiste":"b","Duree":"c","Genre":"b","Annee":"a","Apprecie":null,"Chemin":null},{"Id":2,"Titre":"a","Artiste":"b","Duree":"c","Genre":"d","Annee":"e","Apprecie":null,"Chemin":null}]
